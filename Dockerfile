@@ -4,10 +4,12 @@ RUN gem install bundler
 WORKDIR /
 RUN curl https://codeload.github.com/adamcooke/staytus/zip/master --output master.zip; unzip master.zip && mv staytus-master app; rm master.zip
 WORKDIR /app
-COPY docker-start-v2.sh /app/docker-start-v2.sh
 RUN bundle install --deployment --without development:test
+
+COPY docker-start-v2.sh /app/docker-start-v2.sh
+COPY config/database.example.yml /app/config/database.example.yml
+COPY config/environment.example.yml /app/config/environment.example.yml
 ENTRYPOINT /app/docker-start-v2.sh
-#ENTRYPOINT /app/docker-start.sh
-#EXPOSE 5000
+EXPOSE 5000
 
 

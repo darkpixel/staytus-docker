@@ -1,0 +1,18 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: ${DB_USER}
+  password: ${DB_PASS}
+  database: ${DB_NAME}
+  host: ${DB_HOST}
+
+production:
+  <<: *default
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: staytus_test

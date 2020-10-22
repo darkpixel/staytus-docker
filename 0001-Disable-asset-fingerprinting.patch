@@ -1,0 +1,24 @@
+From de4513aee8d39ba8c55f4e865e2ddf6459b747a3 Mon Sep 17 00:00:00 2001
+From: "Aaron C. de Bruyn" <aaron@heyaaron.com>
+Date: Wed, 21 Oct 2020 20:05:12 -0700
+Subject: [PATCH] Disable asset fingerprinting
+
+---
+ config/application.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/config/application.rb b/config/application.rb
+index 3ab083e..40d2489 100644
+--- a/config/application.rb
++++ b/config/application.rb
+@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
+ module Staytus
+   class Application < Rails::Application
+     config.eager_load_paths += %W(#{config.root}/lib)
++    config.assets.digest = false
+     config.generators do |g|
+       g.orm             :active_record
+       g.test_framework  false
+-- 
+2.25.1
+

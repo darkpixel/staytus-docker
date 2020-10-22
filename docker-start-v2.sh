@@ -7,4 +7,4 @@ if [ -n "${DB_INIT+set}" ]; then
 fi
 
 bundle exec rake staytus:build staytus:upgrade
-bundle exec foreman start
+#bundle exec foreman start

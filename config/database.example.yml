@@ -5,6 +5,7 @@ default: &default
   username: ${DB_USER}
   password: ${DB_PASS}
   database: ${DB_NAME}
+  port: ${DB_PORT}
   host: ${DB_HOST}
 
 production:

@@ -1,4 +1,5 @@
 FROM ruby:alpine
+LABEL org.opencontainers.image.source https://github.com/darkpixel/staytus-docker
 
 RUN apk add --update --no-cache libc-dev make g++ nodejs tzdata curl mariadb-dev gettext ruby-bundler libxml2-dev patch
 RUN mkdir  /app

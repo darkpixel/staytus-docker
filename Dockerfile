@@ -17,6 +17,8 @@ COPY 0001-Disable-asset-fingerprinting.patch /app/0001-Disable-asset-fingerprint
 RUN patch -p0 0001-Disable-asset-fingerprinting.patch
 
 ENV RAILS_ENV=production
+ENV RAILS_MAX_THREADS=1
+ENV WEB_CONCURRENCY=1
 
 ENTRYPOINT /app/docker-start-v2.sh
 EXPOSE 5000

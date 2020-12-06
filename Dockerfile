@@ -1,11 +1,12 @@
 FROM ruby:alpine
 LABEL org.opencontainers.image.source https://github.com/darkpixel/staytus-docker
 
-RUN apk add --update --no-cache libc-dev make g++ nodejs tzdata curl mariadb-dev gettext ruby-bundler libxml2-dev patch
+RUN apk add --update --no-cache libc-dev make g++ nodejs tzdata curl mariadb-dev gettext ruby-bundler libxml2-dev patch git
 RUN mkdir  /app
 WORKDIR /app
 
-RUN curl https://codeload.github.com/adamcooke/staytus/zip/master | unzip -d /tmp -; mv /tmp/staytus-master/* /app/ && rm -rf /tmp/staytus-master/
+RUN git clone https://github.com/adamcooke/staytus.git /app
+RUN git checkout 180291688b53ec331041f6a0472a21df5a7ba7b5
 RUN gem install bundler:1.17.2
 RUN bundle install --deployment --without development:test
 

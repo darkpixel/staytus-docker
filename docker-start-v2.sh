@@ -1,7 +1,7 @@
 envsubst < /app/config/database.example.yml > /app/config/database.yml
 envsubst < /app/config/environment.example.yml > /app/config/environment.yml
 
-ls -1 *.patch | xargs patch -p0
+ls -1 *.patch | xargs git apply
 
 if [ -n "${DB_INIT+set}" ]; then
     echo '$DB_INIT was set, initializing database'

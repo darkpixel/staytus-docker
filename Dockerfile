@@ -6,7 +6,7 @@ RUN mkdir  /app
 WORKDIR /app
 
 RUN git clone https://github.com/adamcooke/staytus.git /app
-RUN git checkout 180291688b53ec331041f6a0472a21df5a7ba7b5
+RUN git checkout fb78d399d0741dc95945df91578716e3749d07b1
 RUN gem install bundler:1.17.2
 RUN bundle install --deployment --without development:test
 

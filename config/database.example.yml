@@ -2,11 +2,11 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: ${DB_USER}
-  password: ${DB_PASS}
-  database: ${DB_NAME}
+  username: "${DB_USER}"
+  password: "${DB_PASS}"
+  database: "${DB_NAME}"
   port: ${DB_PORT}
-  host: ${DB_HOST}
+  host: "${DB_HOST}"
 
 production:
   <<: *default

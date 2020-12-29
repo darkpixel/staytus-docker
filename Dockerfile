@@ -13,9 +13,7 @@ RUN bundle install --deployment --without development:test
 COPY docker-start-v2.sh /app/docker-start-v2.sh
 COPY config/database.example.yml /app/config/database.example.yml
 COPY config/environment.example.yml /app/config/environment.example.yml
-COPY 0001-Disable-asset-fingerprinting.patch /app/0001-Disable-asset-fingerprinting.patch
-
-RUN patch -p0 0001-Disable-asset-fingerprinting.patch
+COPY *.patch /app/
 
 ENV RAILS_ENV=production
 ENV RAILS_MAX_THREADS=1

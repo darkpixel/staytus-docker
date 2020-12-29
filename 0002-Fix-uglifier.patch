@@ -1,0 +1,25 @@
+From ffd3430b27468466e2b784ae934db7dd2c4f581b Mon Sep 17 00:00:00 2001
+From: "Aaron C. de Bruyn" <aaron@heyaaron.com>
+Date: Mon, 28 Dec 2020 16:29:50 -0800
+Subject: [PATCH] Fix uglifier
+
+---
+ config/environments/production.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/config/environments/production.rb b/config/environments/production.rb
+index 8a987f3..02bb968 100644
+--- a/config/environments/production.rb
++++ b/config/environments/production.rb
+@@ -25,7 +25,7 @@ Rails.application.configure do
+   config.serve_static_files = true
+ 
+   # Compress JavaScripts and CSS.
+-  config.assets.js_compressor = :uglifier
++  config.assets.js_compressor = Uglifier.new(harmony: true)
+   # config.assets.css_compressor = :sass
+ 
+   # Do not fallback to assets pipeline if a precompiled asset is missed.
+-- 
+2.25.1
+

@@ -8,5 +8,9 @@ if [ -n "${DB_INIT+set}" ]; then
     bundle exec rake staytus:build staytus:install
 fi
 
+echo DATABASE CONFIG
+cat /app/config/database.yml
+echo ENV CONFIG
+cat /app/config/environment.yml
 bundle exec rake staytus:build staytus:upgrade
 bundle exec foreman start

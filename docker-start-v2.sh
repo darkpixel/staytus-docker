@@ -13,5 +13,5 @@ cat /app/config/database.yml
 echo ENV CONFIG
 cat /app/config/environment.yml
 bundle exec rake staytus:build staytus:upgrade
-procodile start
-#bundle exec foreman start
+#procodile start
+bundle exec foreman start

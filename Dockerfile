@@ -1,4 +1,4 @@
-FROM ruby:alpine
+FROM ruby:2.3-alpine
 LABEL org.opencontainers.image.source https://github.com/darkpixel/staytus-docker
 
 RUN apk add --update --no-cache libc-dev make g++ nodejs tzdata curl mariadb-dev gettext ruby-bundler libxml2-dev patch git ruby-dev

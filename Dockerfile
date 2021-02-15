@@ -19,7 +19,7 @@ ENV PATH $GEM_HOME/bin:$GEM_HOME/gems/bin:$PATH
 
 RUN git clone https://github.com/adamcooke/staytus.git /app
 #RUN git config advice.detachedHead=false
-RUN git checkout 180291688b53ec331041f6a0472a21df5a7ba7b5
+RUN git checkout b9b17f2966e3d659fda7d8114fbce9f384a72ef9
 RUN gem install bundler:1.17.2
 RUN bundle install --deployment
 RUN gem install annotate:3.1.1

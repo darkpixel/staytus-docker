@@ -1,0 +1,25 @@
+From 5a52ac00e02503bbefd55f84e2094621f741fd8a Mon Sep 17 00:00:00 2001
+From: "Aaron C. de Bruyn" <aaron@heyaaron.com>
+Date: Wed, 10 Mar 2021 14:14:14 -0800
+Subject: [PATCH] Fix update of service status
+
+---
+ app/models/issue.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/app/models/issue.rb b/app/models/issue.rb
+index 65639cb..eb79560 100644
+--- a/app/models/issue.rb
++++ b/app/models/issue.rb
+@@ -72,7 +72,7 @@ class Issue < ActiveRecord::Base
+   end
+ 
+   def update_service_statuses
+-    if self.service_status_id_changed?
++    if self.saved_change_to_service_status_id?
+       self.services.each do |service|
+         service.status = self.service_status
+         service.save
+-- 
+2.25.1
+
